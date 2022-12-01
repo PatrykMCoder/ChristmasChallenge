@@ -14,7 +14,6 @@ public class DayOne
         double distanceBeetweenStartAndFirstStop = DayOne.calculateDistance(xStart, xPoints[1], yStart, yPoints[1]);
         double distance = distanceBeetweenStartAndFirstStop;
         for (int i = 1; i < stops; i++) {
-            System.out.println(i);
             x1 = xPoints[i];
             y1 = yPoints[i];
             
