@@ -8,7 +8,7 @@ public class DayThree {
         scanner.close();
 
         // draw tree;
-        for (int i = 0; i <= height; i++) {
+        for (int i = 0; i < height; i++) {
             System.out.println("");
             for (int j = height - i; j > 0; j--) {
                 System.out.print(" ");
@@ -19,10 +19,13 @@ public class DayThree {
         }
 
         // draw tree trunk
-        for (int l = height / 2; l < height; l++) {
+        for (int l = height / 3; l < height; l++) {
             System.out.println("");
-            for (int m = height / 3; m < height; m++) {
-                System.out.print(" | ");
+            for (int j = height - 1; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int m = 0; m < height / 3; m++) {
+                System.out.print("|");
             }
         }
     }
