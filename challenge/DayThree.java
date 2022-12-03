@@ -21,8 +21,8 @@ public class DayThree {
         // draw tree trunk
         for (int l = height / 2; l < height; l++) {
             System.out.println("");
-            for (int m = height / 2; m < height; m++) {
-                System.out.print("  |");
+            for (int m = height / 3; m < height; m++) {
+                System.out.print(" | ");
             }
         }
     }
