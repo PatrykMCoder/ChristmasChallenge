@@ -1,4 +1,4 @@
-package dayfive.shortversion;
+package model;
 
 import java.util.Objects;
 

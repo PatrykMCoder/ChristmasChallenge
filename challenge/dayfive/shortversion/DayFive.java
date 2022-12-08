@@ -1,6 +1,9 @@
 package dayfive.shortversion;
 
 import java.util.List;
+
+import model.Address;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 
