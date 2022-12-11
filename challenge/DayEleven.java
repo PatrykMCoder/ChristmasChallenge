@@ -10,16 +10,12 @@ public class DayEleven {
     private static Envelope medium = new Envelope(20, 30);
     private static Envelope big = new Envelope(30, 30);
 
-    private static int smallSpace = calculateSpace(small.getWidth(), small.getHeight());
-    private static int mediumSpace = calculateSpace(medium.getWidth(), medium.getHeight());
-    private static int bigSpace = calculateSpace(big.getWidth(), big.getHeight());
     public static void main(String[] args) {
         List<Gift> gifts = prepareGifts();
-        Map<String, String> envelopeData = new HashMap<>();
+        Map<Gift, Envelope> envelopeData = new HashMap<>();
 
         gifts.forEach(gift -> {
-            int giftSpace = calculateSpace(gift.getWidth(), gift.getHeight());
-            envelopeData.put(gift.getName(), prepareGoodEnvelope(giftSpace));
+            envelopeData.put(gift, prepareGoodEnvelope(gift));
         });
 
         envelopeData.forEach((k, v) -> {
@@ -27,24 +23,16 @@ public class DayEleven {
         });
     }
 
-    private static String prepareGoodEnvelope(int giftSpace) {
-        if (giftSpace >= bigSpace) {
-            return "No envelope for that gift :(";
-        } else if (giftSpace >= smallSpace && giftSpace < mediumSpace) {
-            return "Medium envelope";
-        } else if (giftSpace >= mediumSpace && giftSpace < smallSpace) {
-            return "Small envelope";
-        } else if (giftSpace < smallSpace) {
-            return "Small envelope";
-        } else if (giftSpace >= mediumSpace && giftSpace < bigSpace){
-            return "Big envelope";
-        }else {
-            return "";
+    private static Envelope prepareGoodEnvelope(Gift gift) {
+        if (gift.getWidth() <= small.getWidth() && gift.getHeight() <= small.getHeight()) {
+            return small;
+        } else if(gift.getWidth() <= medium.getWidth() && gift.getHeight() <= medium.getHeight()) {
+            return medium;
+        } else if (gift.getWidth() <= big.getWidth() && gift.getHeight() <= big.getHeight()) {
+            return big;
+        } else {
+            return null;
         }
-    }
-
-    private static int calculateSpace(int w, int h) {
-        return w * h;
     }
 
     private static List<Gift> prepareGifts() {
