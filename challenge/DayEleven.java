@@ -39,7 +39,7 @@ public class DayEleven {
         } else if (giftSpace >= mediumSpace && giftSpace < bigSpace){
             return "Big envelope";
         }else {
-            return "Brak danych";
+            return "";
         }
     }
 
