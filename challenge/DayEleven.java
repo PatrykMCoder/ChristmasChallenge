@@ -17,8 +17,6 @@ public class DayEleven {
         List<Gift> gifts = prepareGifts();
         Map<String, String> envelopeData = new HashMap<>();
 
-      
-
         gifts.forEach(gift -> {
             int giftSpace = calculateSpace(gift.getWidth(), gift.getHeight());
             envelopeData.put(gift.getName(), prepareGoodEnvelope(giftSpace));
