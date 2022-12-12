@@ -24,11 +24,14 @@ public class DayEleven {
     }
 
     private static Envelope prepareGoodEnvelope(Gift gift) {
-        if (gift.getWidth() <= small.getWidth() && gift.getHeight() <= small.getHeight()) {
+        if (gift.getWidth() <= small.getWidth() && gift.getHeight() <= small.getHeight()
+        || gift.getWidth() <= small.getHeight() && gift.getHeight() <= small.getWidth()) {
             return small;
-        } else if(gift.getWidth() <= medium.getWidth() && gift.getHeight() <= medium.getHeight()) {
+        } else if(gift.getWidth() <= medium.getWidth() && gift.getHeight() <= medium.getHeight()
+        || gift.getWidth() <= medium.getHeight() && gift.getHeight() <= medium.getWidth()) {
             return medium;
-        } else if (gift.getWidth() <= big.getWidth() && gift.getHeight() <= big.getHeight()) {
+        } else if (gift.getWidth() <= big.getWidth() && gift.getHeight() <= big.getHeight()
+        || gift.getWidth() <= big.getHeight() && gift.getHeight() <= big.getWidth()) {
             return big;
         } else {
             return null;
