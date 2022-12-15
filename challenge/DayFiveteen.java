@@ -3,6 +3,9 @@ import java.util.Map;
 
 import static java.lang.Math.PI;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+
 public class DayFiveteen {
     public static void main(String[] args) {
         Map<String, Integer> ingredientsForRectangleForm = Map.of(
@@ -26,13 +29,14 @@ public class DayFiveteen {
      * 
      */
 
-    private static Map<String, Integer> prepareForCircleForm(int[] rectangularForm, double rCircleForm, Map<String, Integer> ingredientsForRectangleForm) {  
-        Map<String, Integer> ingredientsForCircleForm = new HashMap<String, Integer>();
-        double fieldCircleForm = PI * Math.pow(rCircleForm, 2);
+    private static Map<String, BigDecimal> prepareForCircleForm(int[] rectangularForm, double dCircleForm, Map<String, Integer> ingredientsForRectangleForm) {  
+        Map<String, BigDecimal> ingredientsForCircleForm = new HashMap<>();
+        double fieldCircleForm = PI * Math.pow(dCircleForm / 2, 2);
+
         double fieldRectangularForm = rectangularForm[0] * rectangularForm[1];
         ingredientsForRectangleForm.forEach((k,v) -> {
             double d = (fieldCircleForm * v) / fieldRectangularForm;
-            ingredientsForCircleForm.put(k, (int)d);
+            ingredientsForCircleForm.put(k, new BigDecimal(d).setScale(0, BigDecimal.ROUND_HALF_UP));
         });
         
         return ingredientsForCircleForm;
