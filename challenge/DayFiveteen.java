@@ -12,7 +12,7 @@ public class DayFiveteen {
             "Czekolada", 200,
             "Maslo", 200);
 
-            System.out.println(prepare(new int[]{20, 30}, 9.8, ingredientsForRectangleForm));
+            System.out.println(prepareForCircleForm(new int[]{20, 30}, 9.8, ingredientsForRectangleForm));
     }
 
 
@@ -26,7 +26,7 @@ public class DayFiveteen {
      * 
      */
 
-    private static Map<String, Integer> prepare(int[] rectangularForm, double rCircleForm, Map<String, Integer> ingredientsForRectangleForm) {  
+    private static Map<String, Integer> prepareForCircleForm(int[] rectangularForm, double rCircleForm, Map<String, Integer> ingredientsForRectangleForm) {  
         Map<String, Integer> ingredientsForCircleForm = new HashMap<String, Integer>();
         double fieldCircleForm = PI * Math.pow(rCircleForm, 2);
         double fieldRectangularForm = rectangularForm[0] * rectangularForm[1];
