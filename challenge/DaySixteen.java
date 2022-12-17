@@ -8,8 +8,8 @@ public class DaySixteen {
     public static void main(String[] args) {
         List<ChildWithBirthDate> children = prepareChildren();
         System.out.println("Children from youngest to oldest: ");
-        System.out.println("Youngest: " + children.stream().max(Comparator.comparing(ChildWithBirthDate::getDateOfBirth)).get());
-        System.out.println("Oldest: " + children.stream().min(Comparator.comparing(ChildWithBirthDate::getDateOfBirth)).get());
+        children.stream().max(Comparator.comparing(ChildWithBirthDate::getDateOfBirth)).ifPresent(child -> System.out.println("Youngest: " + child));
+        children.stream().min(Comparator.comparing(ChildWithBirthDate::getDateOfBirth)).ifPresent(child -> System.out.println("Oldest: " + child));
     }
 
     private static List<ChildWithBirthDate> prepareChildren() {
