@@ -5,7 +5,6 @@ public class DaySeventeen {
         int radius = height / 2;
         int posX = height;
         int posY = height;
-        System.out.println(posX + radius);
         char[] chars = {'#', '*'};
         for (int i = 0; i < posX + radius; i++) {
             for (int j = 0; j < posY + radius; j++) {
