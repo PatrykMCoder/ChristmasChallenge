@@ -18,7 +18,7 @@ public class DayNineteen {
 
         double allPaperInCm2 = papperForSmall + paperForMedium + paperForBig;
         
-        System.out.println("Santa need " + Math.ceil(convertToM2(allPaperInCm2)) + "m2 papper");
+        System.out.println("Santa need " + Math.ceil(convertToM2(allPaperInCm2)) + "m2 paper");
 
     }
 
